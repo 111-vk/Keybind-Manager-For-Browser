@@ -3,7 +3,10 @@
     "name": "Multi Keybind Site Opener",
     "version": "1.0",
     "description": "Assign multiple keybinds to open multiple sites.",
-    "permissions": ["storage", "tabs"],
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
     "background": {
         "service_worker": "background.js"
     },
@@ -28,6 +31,12 @@
                 "default": "Ctrl+Shift+3"
             },
             "description": "Open site assigned to slot 3"
+        },
+        "open-site-4": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+4"
+            },
+            "description": "Open site assigned to slot 4"
         }
     }
 }

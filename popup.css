@@ -1,80 +1,219 @@
 :root {
+    /* Color Palette */
     --bg-color: #121212;
     --text-color: #ffffff;
     --accent-color: #ffcc00;
-    --input-bg: #222;
-    --input-border: #444;
+    --input-bg: #222222;
+    --input-border: #444444;
     --entry-bg: #1e1e1e;
     --button-bg: #ffcc00;
     --button-hover: #e6b800;
     --delete-bg: #ff4444;
     --delete-hover: #cc0000;
+    --disabled-color: #666666;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --transition-speed: 0.2s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     width: 300px;
-    padding: 10px;
-    font-family: Arial, sans-serif;
+    padding: 12px;
+    font-family: 'Arial', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
+    line-height: 1.4;
+    font-size: 14px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 600px;
 }
 
+/* Logo Styling */
+#logo {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if height is set */
+    margin-bottom: 12px;
+}
+
+#logo img {
+    max-width: 70px; /* Adjust based on your logo size */
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: transform var(--transition-speed) ease;
+    -webkit-user-drag: none; /* For Chrome/Safari */
+    /* -user-drag: none; Standard */
+    -moz-user-select: none; /* For Firefox */
+    -webkit-user-select: none; /* For Chrome/Safari */
+    user-select: none; /* Standard */
+
+}
+
+
+/* Headings (Fixed h1 to h2 since your HTML uses h2) */
 h2 {
-    margin: 0 0 10px;
+    margin-bottom: 12px;
     color: var(--accent-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center; /* Centered for better popup aesthetics */
 }
 
+/* Form Elements Container */
 div {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center; /* Align label and input/select vertically */
 }
 
+/* Labels */
 label {
-    display: inline-block;
     width: 60px;
     color: #bbbbbb;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    flex-shrink: 0; /* Prevent label from shrinking */
 }
 
-input, select {
-    width: 200px;
-    padding: 5px;
+/* Inputs and Selects */
+input,
+select {
+    flex-grow: 1; /* Take remaining space */
+    max-width: 200px;
+    padding: 6px;
     background-color: var(--input-bg);
     color: var(--text-color);
     border: 1px solid var(--input-border);
     border-radius: 4px;
+    font-size: 0.85rem;
+    transition: border-color var(--transition-speed) ease;
 }
 
-button {
-    padding: 6px 12px;
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 3px var(--shadow-color);
+}
+
+input::placeholder {
+    color: #888888;
+    opacity: 0.8;
+}
+
+/* Add Button */
+button#add {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
     cursor: pointer;
     background-color: var(--button-bg);
     color: var(--bg-color);
     border: none;
     border-radius: 4px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color var(--transition-speed) ease;
+    margin-top: 10px; /* Space above button */
 }
 
-button:hover {
+button#add:hover {
     background-color: var(--button-hover);
 }
 
+button#add:disabled {
+    background-color: var(--disabled-color);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* List Container */
+#list {
+    margin-top: 15px;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Entry Items */
 .entry {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: var(--entry-bg);
     padding: 8px;
-    border-radius: 6px;
-    margin: 5px 0;
+    width: 100%;
+    border-radius: 4px;
+    margin: 6px 0;
+    box-shadow: 0 1px 3px var(--shadow-color);
 }
 
+/* Entry Text */
+.entry span {
+    font-size: 0.85rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* max-width: 200px; Prevent overflow */
+
+}
+
+/* Delete Buttons */
 .entry button {
     background: var(--delete-bg);
     color: var(--text-color);
     border: none;
     padding: 4px 8px;
     border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+    min-width: 24px; /* Consistent width for delete buttons */
 }
 
+#help {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    
+}
 .entry button:hover {
     background: var(--delete-hover);
+}
+
+/* Scrollbar Styling */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--entry-bg);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--input-border);
+    border-radius: 4px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 1px;
 }

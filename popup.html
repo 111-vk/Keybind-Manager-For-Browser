@@ -5,13 +5,17 @@
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <h2>Keybind Manager For Browser</h2>
+    <div id="logo">
+        <img src="images/saki_1.png" alt="Logo" draggable="false">
+    </div>
+    <h2>Keybind For Browser</h2>
     <div>
-        <label>Slot (1-3):</label>
+        <label>Slot (0-4):</label>
         <select id="slot">
             <option value="open-site-1">Slot 1 (Ctrl+Shift+1)</option>
             <option value="open-site-2">Slot 2 (Ctrl+Shift+2)</option>
             <option value="open-site-3">Slot 3 (Ctrl+Shift+3)</option>
+            <option value="open-site-4">Slot 4 (Ctrl+Shift+4)</option>
         </select>
     </div>
     <div>
@@ -20,6 +24,7 @@
     </div>
     <button id="add">Add Keybind</button>
     <div id="list"></div>
+    <a href="https://github.com/111-vk/Keybind-Manager-For-Browser" id="help"  target="_blank">help</a>
     <script src="popup.js"></script>
 </body>
 </html>
