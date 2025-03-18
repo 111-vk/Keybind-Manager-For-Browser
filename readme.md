@@ -17,6 +17,7 @@ This is a simple local Chrome-based extension that allows you to open your most 
 
 ## Installation
 1. **Download or clone** the extension files.
+
    ```sh
    git clone https://github.com/111-vk/Keybind-Manager-For-Browser.git
    ```
