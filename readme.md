@@ -55,8 +55,15 @@ i don't want do that. or i don't know how to do that???
 ## Issues
 If you encounter any issues, feel free to contribute or report an issue on GitHub.
 
+## Preview
+
+<div align="center">
+
+![Extension Preview](images/image.png)
+
+</div>
+
 ---
 🚀 **Enjoy quick access to your favorite sites with just a keystroke!**
 
 ---
-
