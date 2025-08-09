@@ -34,6 +34,31 @@ This is a simple local Chrome-based extension that allows you to open your most 
 | 3 | Ctrl+Shift+3 | Open assigned website for Slot 3 |
 | 4 | Ctrl+Shift+4 | Open assigned website for Slot 4 |
 
+> **Note:**
+> 
+> Sometimes these default keybinds are not automatically assigned in your browser's extension shortcuts. If pressing `Ctrl+Shift+1` to `Ctrl+Shift+4` does not open your assigned websites, you will need to manually assign these shortcuts.
+
+### How to Manually Assign Keybinds
+
+1. **Open your browser's extensions page:**  
+   - Chrome: `chrome://extensions/`  
+   - Brave: `brave://extensions/`
+2. **Enable Developer Mode** if required.
+3. **Click on Keyboard shortcuts:**  
+   - Usually found in the top left (below your extensions) or in the top right corner.
+4. **Locate the "Multi Keybind Site Opener" extension** in the list.
+5. **Assign shortcuts for each slot:**  
+   - Click the **pencil icon** next to the slot (e.g., "Open assigned website for Slot 1").  
+   - The input field will activate. Enter your preferred keybind (e.g., `Ctrl+Shift+1` or `Ctrl+Shift+Y` for YouTube).
+6. **Repeat** for all slots you want to use.
+7. **Save your changes.**
+
+This ensures your shortcuts are active and will work as expected.
+
+> **Tip:**
+> - Make sure the keybinds you enter do **not conflict** with any existing shortcuts in your browser or other extensions.
+> - **Example:** Do not enter `Ctrl+H` as it is already assigned to the browser's history page. Check your browser's shortcut list for conflicts before assigning.
+
 ## Customizing Keybinds
 If you don't like the default keybinds, you can change them by following these steps:
 1. Open `brave://extensions/` in your browser.
